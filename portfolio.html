@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Portfolio - Wincon Piling and Constructing Company Limited</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --accent: #10b981;
+            --accent-soft: rgba(16, 185, 129, 0.1);
+            --bg-soft: #f8fafc;
+        }
+
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .inner-hero {
+            padding: 120px 0 60px;
+            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+        }
+
+        .section-padding { padding: 80px 0; }
+        
+        .project-card { border-radius: 20px; overflow: hidden; position: relative; aspect-ratio: 16/10; margin-bottom: 30px; }
+        .project-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+        .project-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(15,23,42,0.95), transparent); display: flex; flex-direction: column; justify-content: flex-end; padding: 25px; opacity: 0; transition: opacity 0.4s; }
+        
+        .project-card:hover .project-overlay { opacity: 1; }
+        .project-card:hover .project-img { transform: scale(1.1); }
+
+        .filter-btn { padding: 8px 20px; border-radius: 100px; border: 1px solid #ddd; background: white; font-weight: 600; font-size: 0.85rem; transition: all 0.3s; margin: 0 5px; }
+        .filter-btn.active, .filter-btn:hover { background: var(--accent); border-color: var(--accent); color: white; }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar (same as others) -->
+    <nav class="navbar navbar-expand-lg border-bottom sticky-top bg-white">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">WINCON <span style="color: var(--accent)">PILING</span></a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="portfolio.html">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Inner Hero -->
+    <section class="inner-hero">
+        <div class="container" data-aos="fade-up">
+            <h1 class="display-3 fw-bold mb-3">Our Engineering Portfolio</h1>
+            <p class="lead opacity-75">Demonstrating excellence across Nigeria's landscape.</p>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="section-padding bg-soft">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <button class="filter-btn active">All Projects</button>
+                <button class="filter-btn">Piling</button>
+                <button class="filter-btn">Civil</button>
+                <button class="filter-btn">Real Estate</button>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in">
+                    <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80" class="project-img" alt="Piling">
+                        <div class="project-overlay">
+                            <span class="badge bg-accent mb-2">Piling</span>
+                            <h5 class="text-white fw-bold mb-1">Victoria Island High-Rise</h5>
+                            <p class="text-white-50 small mb-0">Deep bored piling for 25-floor foundation.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80" class="project-img" alt="Civil">
+                        <div class="project-overlay">
+                            <span class="badge bg-accent mb-2">Civil</span>
+                            <h5 class="text-white fw-bold mb-1">Abuja Office Complex</h5>
+                            <p class="text-white-50 small mb-0">Structural design and implementation.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1590644365607-1c5a519a7a37?auto=format&fit=crop&w=800&q=80" class="project-img" alt="Infrastructure">
+                        <div class="project-overlay">
+                            <span class="badge bg-accent mb-2">Infrastructure</span>
+                            <h5 class="text-white fw-bold mb-1">Lekki Drainage Network</h5>
+                            <p class="text-white-50 small mb-0">Large scale civil earthworks.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Repeat for more projects -->
+                 <div class="col-md-6 col-lg-4" data-aos="zoom-in">
+                    <div class="project-card">
+                        <img src="https://images.unsplash.com/photo-1582408920155-758e5771f657?auto=format&fit=crop&w=800&q=80" class="project-img" alt="Land">
+                        <div class="project-overlay">
+                            <span class="badge bg-accent mb-2">Real Estate</span>
+                            <h5 class="text-white fw-bold mb-1">Riverside Estate Plots</h5>
+                            <p class="text-white-50 small mb-0">Land surveying and infrastructure layout.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-primary text-white py-4 text-center">
+        <div class="container"><p class="small mb-0 opacity-50">&copy; 2024 Wincon Piling. Building with Integrity.</p></div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ once: true });</script>
+</body>
+</html>

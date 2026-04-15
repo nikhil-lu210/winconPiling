@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Wincon Piling and Constructing Company Limited</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f172a;
+            --primary-light: #1e293b;
+            --accent: #10b981;
+            --accent-dark: #059669;
+            --accent-soft: rgba(16, 185, 129, 0.1);
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --bg-soft: #f8fafc;
+            --bg-white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.8);
+            --shadow-sm: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            --shadow-md: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: var(--bg-white);
+        }
+
+        /* Same styles as index.html for consistency */
+        .top-bar { background: var(--primary); color: white; padding: 8px 0; font-size: 0.75rem; font-weight: 600; }
+        .navbar { padding: 1rem 0; background: var(--glass); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(226, 232, 240, 0.8); z-index: 1000; }
+        .navbar-brand { font-weight: 800; font-size: 1.5rem; color: var(--primary) !important; }
+        .nav-link { font-weight: 600; font-size: 0.9rem; margin-left: 1.5rem; color: var(--text-main) !important; position: relative; }
+        .nav-link:hover::after { width: 100%; }
+        .nav-link::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px; background: var(--accent); transition: width 0.3s ease; }
+
+        .inner-hero {
+            padding: 120px 0 60px;
+            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+        }
+
+        .section-padding { padding: 80px 0; }
+        .section-tag { display: inline-block; padding: 6px 16px; background: var(--accent-soft); color: var(--accent); border-radius: 100px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-bottom: 1rem; }
+        .card-premium { background: white; border: 1px solid #f1f5f9; border-radius: 24px; padding: 40px; transition: all 0.4s ease; height: 100%; box-shadow: var(--shadow-sm); }
+        
+        .btn-premium { padding: 14px 32px; border-radius: 12px; font-weight: 700; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); display: inline-flex; align-items: center; gap: 10px; text-decoration: none; }
+        .btn-accent { background: var(--accent); color: white; border: none; }
+        .btn-accent:hover { background: var(--accent-dark); transform: translateY(-2px); color: white; }
+
+        .about-img-frame { position: relative; padding: 20px; }
+        .about-img-frame img { border-radius: 24px; width: 100%; }
+        .about-img-frame::before { content: ''; position: absolute; top: 0; left: 0; width: 80%; height: 80%; border: 8px solid var(--accent-soft); border-radius: 24px; z-index: -1; }
+
+        .stat-card { text-align: center; padding: 30px; border-radius: 20px; background: var(--bg-soft); }
+        .stat-number { font-size: 2.5rem; font-weight: 800; color: var(--accent); display: block; }
+    </style>
+</head>
+
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar text-center">
+        <div class="container">
+            <i class="fas fa-certificate me-2 text-accent"></i> REGISTERED WITH CORPORATE AFFAIRS COMMISSION NIGERIA • <strong>RC: 766863</strong>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                WINCON <span style="color: var(--accent)">PILING</span>
+            </a>
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item ms-lg-4">
+                        <a href="contact.html" class="btn btn-premium btn-accent py-2 px-4 shadow-sm">Get a Quote</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Inner Hero -->
+    <section class="inner-hero">
+        <div class="container" data-aos="fade-up">
+            <h1 class="display-3 fw-bold mb-3">About Our Company</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center">
+                    <li class="breadcrumb-item"><a href="index.html" class="text-white text-decoration-none">Home</a></li>
+                    <li class="breadcrumb-item active text-accent" aria-current="page">About Us</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Company Overview -->
+    <section class="section-padding">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="about-img-frame">
+                        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80" alt="About Wincon">
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="section-tag">Since 2008</div>
+                    <h2 class="fw-bold mb-4">Engineering Excellence in Every Foundation</h2>
+                    <p class="lead text-muted mb-4">Wincon Piling and Constructing Company Limited is a premier engineering firm specialized in deep foundation solutions and civil construction.</p>
+                    <p class="mb-5">Incorporated on August 20, 2008, we have spent over 15 years building a reputation for technical precision and unwavering reliability across Nigeria. From the challenging terrains of Lagos to the expanding infrastructure of Abuja, our foundations support the nation's landmarks.</p>
+                    
+                    <div class="row g-4">
+                        <div class="col-sm-6">
+                            <div class="d-flex gap-3 align-items-center">
+                                <div class="card-icon bg-accent-soft p-3 rounded-circle" style="color: var(--accent);"><i class="fas fa-bullseye"></i></div>
+                                <div>
+                                    <h6 class="fw-bold mb-0">Our Mission</h6>
+                                    <p class="small mb-0 text-muted">Excellence in engineering.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="d-flex gap-3 align-items-center">
+                                <div class="card-icon bg-accent-soft p-3 rounded-circle" style="color: var(--accent);"><i class="fas fa-eye"></i></div>
+                                <div>
+                                    <h6 class="fw-bold mb-0">Our Vision</h6>
+                                    <p class="small mb-0 text-muted">Leading Africa's foundation work.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Values -->
+    <section class="section-padding bg-soft">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <div class="section-tag">Values</div>
+                <h2 class="fw-bold">What Drives Us</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="card-premium text-center">
+                        <div class="fs-1 text-accent mb-4"><i class="fas fa-shield-alt"></i></div>
+                        <h4 class="fw-bold mb-3">Integrity</h4>
+                        <p class="text-muted">We build trust through transparent practices and uncompromising quality in every project.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card-premium text-center">
+                        <div class="fs-1 text-accent mb-4"><i class="fas fa-microchip"></i></div>
+                        <h4 class="fw-bold mb-3">Innovation</h4>
+                        <p class="text-muted">Utilizing the latest piling technology and geotechnical software to solve complex problems.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-premium text-center">
+                        <div class="fs-1 text-accent mb-4"><i class="fas fa-hard-hat"></i></div>
+                        <h4 class="fw-bold mb-3">Safety</h4>
+                        <p class="text-muted">Prioritizing the well-being of our workers and the communities we serve with strict HSE standards.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="section-padding bg-primary text-white">
+        <div class="container text-center">
+            <h4 class="fw-bold mb-4">WINCON <span class="text-accent">PILING</span></h4>
+            <p class="opacity-50 small">&copy; 2024 Wincon Piling and Constructing Company Limited. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ once: true });</script>
+</body>
+</html>
