@@ -29,7 +29,10 @@
         .navbar { padding: 1rem 0; background: var(--glass); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(226, 232, 240, 0.8); z-index: 1000; }
         .navbar-brand { font-weight: 800; font-size: 1.5rem; color: var(--primary) !important; }
         .nav-link { font-weight: 600; font-size: 0.9rem; margin-left: 1.5rem; color: var(--text-main) !important; position: relative; }
-        
+        .nav-link::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px; background: var(--accent); transition: width 0.3s ease; }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+        .nav-link.active { color: var(--accent) !important; font-weight: 700; }
+
         .inner-hero {
             padding: 120px 0 60px;
             background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1920&q=80');
@@ -47,6 +50,11 @@
         
         .btn-link-accent { color: var(--accent); font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; transition: gap 0.3s; }
         .btn-link-accent:hover { gap: 12px; }
+
+        .btn-premium { padding: 14px 32px; border-radius: 12px; font-weight: 700; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); display: inline-flex; align-items: center; gap: 10px; text-decoration: none; }
+        .btn-accent { background: var(--accent); color: white; border: none; box-shadow: 0 4px 14px 0 rgba(16, 185, 129, 0.39); }
+        .btn-accent:hover { background: #059669; transform: translateY(-2px); color: white; }
+        .text-accent { color: var(--accent) !important; }
     </style>
 </head>
 
@@ -61,12 +69,18 @@
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">WINCON <span style="color: var(--accent)">PILING</span></a>
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="services.html" aria-current="page">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item ms-lg-4">
+                        <a href="contact.html" class="btn btn-premium btn-accent py-2 px-4 shadow-sm">Get a Quote</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -84,7 +98,7 @@
     <section class="section-padding bg-soft">
         <div class="container">
             <div class="row g-4">
-                <div class="col-lg-4" data-aos="fade-up">
+                <div class="col-lg-4" id="piling" data-aos="fade-up">
                     <div class="card-premium">
                         <div class="service-icon"><i class="fas fa-hammer"></i></div>
                         <h4 class="fw-bold mb-3">Deep Piling Solutions</h4>
@@ -92,20 +106,20 @@
                         <a href="service-piling.html" class="btn-link-accent">Learn More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-lg-4" id="geotechnical" data-aos="fade-up" data-aos-delay="100">
                     <div class="card-premium">
                         <div class="service-icon"><i class="fas fa-microscope"></i></div>
                         <h4 class="fw-bold mb-3">Geotechnical Engineering</h4>
                         <p class="text-muted mb-4">Comprehensive soil analysis, site investigation, and lab testing to ensure foundation safety and longevity.</p>
-                        <a href="service-soil.html" class="btn-link-accent">Learn More <i class="fas fa-arrow-right"></i></a>
+                        <a href="services.html#geotechnical" class="btn-link-accent">Learn More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-lg-4" id="civil-construction" data-aos="fade-up" data-aos-delay="200">
                     <div class="card-premium">
                         <div class="service-icon"><i class="fas fa-city"></i></div>
                         <h4 class="fw-bold mb-3">Civil Construction</h4>
                         <p class="text-muted mb-4">From structural design to massive earthworks, we handle large-scale infrastructure projects across Nigeria.</p>
-                        <a href="service-civil.html" class="btn-link-accent">Learn More <i class="fas fa-arrow-right"></i></a>
+                        <a href="services.html#civil-construction" class="btn-link-accent">Learn More <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
                 <!-- Real Estate -->

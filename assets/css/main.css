@@ -81,6 +81,11 @@ body {
     width: 100%;
 }
 
+.nav-link.active {
+    color: var(--accent) !important;
+    font-weight: 700;
+}
+
 /* Inner Hero (Shared for all subpages) */
 .inner-hero {
     padding: 140px 0 80px;

@@ -42,8 +42,9 @@
         .navbar { padding: 1rem 0; background: var(--glass); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(226, 232, 240, 0.8); z-index: 1000; }
         .navbar-brand { font-weight: 800; font-size: 1.5rem; color: var(--primary) !important; }
         .nav-link { font-weight: 600; font-size: 0.9rem; margin-left: 1.5rem; color: var(--text-main) !important; position: relative; }
-        .nav-link:hover::after { width: 100%; }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
         .nav-link::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px; background: var(--accent); transition: width 0.3s ease; }
+        .nav-link.active { color: var(--accent) !important; font-weight: 700; }
 
         .inner-hero {
             padding: 120px 0 60px;
@@ -90,7 +91,7 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="about.html" aria-current="page">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
                     <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>

@@ -16,11 +16,21 @@
         :root {
             --primary: #0f172a;
             --accent: #10b981;
+            --accent-dark: #059669;
             --accent-soft: rgba(16, 185, 129, 0.1);
             --bg-soft: #f8fafc;
+            --glass: rgba(255, 255, 255, 0.95);
         }
 
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .top-bar { background: var(--primary); color: white; padding: 8px 0; font-size: 0.75rem; font-weight: 600; }
+        .navbar { padding: 1rem 0; background: var(--glass); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(226, 232, 240, 0.8); z-index: 1050; }
+        .navbar-brand { font-weight: 800; font-size: 1.5rem; color: var(--primary) !important; }
+        .btn-premium { padding: 14px 32px; border-radius: 12px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; }
+        .btn-accent { background: var(--accent); color: white; border: none; box-shadow: 0 4px 14px 0 rgba(16, 185, 129, 0.39); }
+        .btn-accent:hover { background: var(--accent-dark); color: white; }
+        .text-accent { color: var(--accent) !important; }
+        .bg-accent { background-color: var(--accent) !important; color: #fff !important; }
         .inner-hero {
             padding: 120px 0 60px;
             background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1920&q=80');
@@ -41,21 +51,34 @@
 
         .filter-btn { padding: 8px 20px; border-radius: 100px; border: 1px solid #ddd; background: white; font-weight: 600; font-size: 0.85rem; transition: all 0.3s; margin: 0 5px; }
         .filter-btn.active, .filter-btn:hover { background: var(--accent); border-color: var(--accent); color: white; }
+
+        .nav-link { font-weight: 600; position: relative; padding-bottom: 4px !important; }
+        .nav-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--accent); transition: width 0.3s ease; }
+        .nav-link:hover::after, .nav-link.active::after { width: 100%; }
+        .nav-link.active { color: var(--accent) !important; font-weight: 700; }
     </style>
 </head>
 
 <body>
-    <!-- Navbar (same as others) -->
-    <nav class="navbar navbar-expand-lg border-bottom sticky-top bg-white">
+    <div class="top-bar text-center">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">WINCON <span style="color: var(--accent)">PILING</span></a>
-            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+            <i class="fas fa-certificate me-2 text-accent"></i> REGISTERED WITH CORPORATE AFFAIRS COMMISSION NIGERIA • <strong>RC: 766863</strong>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">WINCON <span style="color: var(--accent)">PILING</span></a>
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="portfolio.html">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="portfolio.html" aria-current="page">Portfolio</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item ms-lg-4">
+                        <a href="contact.html" class="btn btn-premium btn-accent py-2 px-4 shadow-sm">Get a Quote</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -102,7 +125,7 @@
                 </div>
                 <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
                     <div class="project-card">
-                        <img src="https://images.unsplash.com/photo-1590644365607-1c5a519a7a37?auto=format&fit=crop&w=800&q=80" class="project-img" alt="Infrastructure">
+                        <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80" class="project-img" alt="Infrastructure">
                         <div class="project-overlay">
                             <span class="badge bg-accent mb-2">Infrastructure</span>
                             <h5 class="text-white fw-bold mb-1">Lekki Drainage Network</h5>
@@ -113,7 +136,7 @@
                 <!-- Repeat for more projects -->
                  <div class="col-md-6 col-lg-4" data-aos="zoom-in">
                     <div class="project-card">
-                        <img src="https://images.unsplash.com/photo-1582408920155-758e5771f657?auto=format&fit=crop&w=800&q=80" class="project-img" alt="Land">
+                        <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80" class="project-img" alt="Land development">
                         <div class="project-overlay">
                             <span class="badge bg-accent mb-2">Real Estate</span>
                             <h5 class="text-white fw-bold mb-1">Riverside Estate Plots</h5>
