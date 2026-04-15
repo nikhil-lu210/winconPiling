@@ -49,8 +49,9 @@
         .project-card:hover .project-overlay { opacity: 1; }
         .project-card:hover .project-img { transform: scale(1.1); }
 
-        .filter-btn { padding: 8px 20px; border-radius: 100px; border: 1px solid #ddd; background: white; font-weight: 600; font-size: 0.85rem; transition: all 0.3s; margin: 0 5px; }
-        .filter-btn.active, .filter-btn:hover { background: var(--accent); border-color: var(--accent); color: white; }
+        .filter-btn { padding: 8px 20px; border-radius: 100px; border: 1px solid #ddd; background: white; font-weight: 600; font-size: 0.85rem; transition: all 0.3s; margin: 0 5px; color: var(--primary); }
+        .filter-btn.active { background: var(--accent); border-color: var(--accent); color: white; }
+        .filter-btn:not(.active):hover { background: rgba(16, 185, 129, 0.12); border-color: var(--accent); color: var(--accent); }
 
         .nav-link { font-weight: 600; position: relative; padding-bottom: 4px !important; }
         .nav-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--accent); transition: width 0.3s ease; }
@@ -95,15 +96,15 @@
     <!-- Gallery -->
     <section class="section-padding bg-soft">
         <div class="container">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <button class="filter-btn active">All Projects</button>
-                <button class="filter-btn">Piling</button>
-                <button class="filter-btn">Civil</button>
-                <button class="filter-btn">Real Estate</button>
+            <div class="text-center mb-5 portfolio-filters" data-aos="fade-up" role="tablist" aria-label="Filter projects">
+                <button type="button" class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All Projects</button>
+                <button type="button" class="filter-btn" data-filter="piling" role="tab" aria-selected="false">Piling</button>
+                <button type="button" class="filter-btn" data-filter="civil" role="tab" aria-selected="false">Civil</button>
+                <button type="button" class="filter-btn" data-filter="real-estate" role="tab" aria-selected="false">Real Estate</button>
             </div>
 
-            <div class="row">
-                <div class="col-md-6 col-lg-4" data-aos="zoom-in">
+            <div class="row g-4 portfolio-grid">
+                <div class="col-md-6 col-lg-4 portfolio-item" data-category="piling" data-aos="zoom-in">
                     <div class="project-card">
                         <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80" class="project-img" alt="Piling">
                         <div class="project-overlay">
@@ -113,7 +114,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="100">
+                <div class="col-md-6 col-lg-4 portfolio-item" data-category="civil" data-aos="zoom-in" data-aos-delay="100">
                     <div class="project-card">
                         <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80" class="project-img" alt="Civil">
                         <div class="project-overlay">
@@ -123,7 +124,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="200">
+                <div class="col-md-6 col-lg-4 portfolio-item" data-category="civil" data-aos="zoom-in" data-aos-delay="200">
                     <div class="project-card">
                         <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80" class="project-img" alt="Infrastructure">
                         <div class="project-overlay">
@@ -134,7 +135,7 @@
                     </div>
                 </div>
                 <!-- Repeat for more projects -->
-                 <div class="col-md-6 col-lg-4" data-aos="zoom-in">
+                <div class="col-md-6 col-lg-4 portfolio-item" data-category="real-estate" data-aos="zoom-in">
                     <div class="project-card">
                         <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80" class="project-img" alt="Land development">
                         <div class="project-overlay">
@@ -154,6 +155,35 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init({ once: true });</script>
+    <script>
+        AOS.init({ once: true });
+
+        (function () {
+            var filterBtns = document.querySelectorAll('.portfolio-filters .filter-btn');
+            var items = document.querySelectorAll('.portfolio-item');
+
+            function applyFilter(filter) {
+                items.forEach(function (el) {
+                    var cat = el.getAttribute('data-category');
+                    var show = filter === 'all' || cat === filter;
+                    el.classList.toggle('d-none', !show);
+                });
+            }
+
+            filterBtns.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    var filter = btn.getAttribute('data-filter') || 'all';
+
+                    filterBtns.forEach(function (b) {
+                        var on = b === btn;
+                        b.classList.toggle('active', on);
+                        b.setAttribute('aria-selected', on ? 'true' : 'false');
+                    });
+
+                    applyFilter(filter);
+                });
+            });
+        })();
+    </script>
 </body>
 </html>
