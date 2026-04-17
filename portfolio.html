@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Portfolio - Wincon Piling and Constructing Company Limited</title>
+    <title>Our Portfolio - Wincon Pilling Construction Limited</title>
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Google Fonts -->
@@ -12,6 +12,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/css/glightbox.min.css">
     <style>
         :root {
             --primary: #0f172a;
@@ -43,11 +44,13 @@
         .section-padding { padding: 80px 0; }
         
         .project-card { border-radius: 20px; overflow: hidden; position: relative; aspect-ratio: 16/10; margin-bottom: 30px; }
+        .project-card-link { display: block; position: relative; width: 100%; height: 100%; color: inherit; text-decoration: none; cursor: zoom-in; }
+        .project-card-link:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 20px; }
         .project-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
-        .project-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(15,23,42,0.95), transparent); display: flex; flex-direction: column; justify-content: flex-end; padding: 25px; opacity: 0; transition: opacity 0.4s; }
+        .project-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(15,23,42,0.95), transparent); display: flex; flex-direction: column; justify-content: flex-end; padding: 25px; opacity: 0; transition: opacity 0.4s; pointer-events: none; }
         
-        .project-card:hover .project-overlay { opacity: 1; }
-        .project-card:hover .project-img { transform: scale(1.1); }
+        .project-card:hover .project-card-link .project-overlay { opacity: 1; }
+        .project-card:hover .project-card-link .project-img { transform: scale(1.1); }
 
         .filter-btn { padding: 8px 20px; border-radius: 100px; border: 1px solid #ddd; background: white; font-weight: 600; font-size: 0.85rem; transition: all 0.3s; margin: 0 5px; color: var(--primary); }
         .filter-btn.active { background: var(--accent); border-color: var(--accent); color: white; }
@@ -69,13 +72,14 @@
 
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html">WINCON <span style="color: var(--accent)">PILING</span></a>
+            <a class="navbar-brand" href="index.html">WINCON <span style="color: var(--accent)">PILLING</span></a>
             <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
                     <li class="nav-item"><a class="nav-link active" href="portfolio.html" aria-current="page">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="videos.html">Videos</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                     <li class="nav-item ms-lg-4">
                         <a href="contact.html" class="btn btn-premium btn-accent py-2 px-4 shadow-sm">Get a Quote</a>
@@ -104,45 +108,101 @@
             </div>
 
             <div class="row g-4 portfolio-grid">
-                <div class="col-md-6 col-lg-4 portfolio-item" data-category="piling" data-aos="zoom-in">
+                <div class="col-md-6 col-lg-4 portfolio-item" data-category="civil" data-aos="zoom-in">
                     <div class="project-card">
-                        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80" class="project-img" alt="Piling">
-                        <div class="project-overlay">
-                            <span class="badge bg-accent mb-2">Piling</span>
-                            <h5 class="text-white fw-bold mb-1">Victoria Island High-Rise</h5>
-                            <p class="text-white-50 small mb-0">Deep bored piling for 25-floor foundation.</p>
-                        </div>
+                        <a href="assets/images/samples/guest-house-01.jpeg" class="glightbox project-card-link" data-gallery="wincon-portfolio" data-glightbox="title: Proposed guest house — elevation; description: Architectural deliverables (client sample)">
+                            <img src="assets/images/samples/guest-house-01.jpeg" class="project-img" alt="Right elevation drawing for proposed guest house">
+                            <div class="project-overlay">
+                                <span class="badge bg-accent mb-2">Civil</span>
+                                <h5 class="text-white fw-bold mb-1">Proposed guest house — elevation</h5>
+                                <p class="text-white-50 small mb-0">Architectural deliverables (client sample)</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 portfolio-item" data-category="civil" data-aos="zoom-in" data-aos-delay="50">
+                    <div class="project-card">
+                        <a href="assets/images/samples/guest-house-02.jpeg" class="glightbox project-card-link" data-gallery="wincon-portfolio" data-glightbox="title: Guest house — design views; description: Structural and elevation documentation">
+                            <img src="assets/images/samples/guest-house-02.jpeg" class="project-img" alt="Building elevation study">
+                            <div class="project-overlay">
+                                <span class="badge bg-accent mb-2">Civil</span>
+                                <h5 class="text-white fw-bold mb-1">Guest house — design views</h5>
+                                <p class="text-white-50 small mb-0">Structural &amp; elevation documentation</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 portfolio-item" data-category="civil" data-aos="zoom-in" data-aos-delay="100">
                     <div class="project-card">
-                        <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80" class="project-img" alt="Civil">
-                        <div class="project-overlay">
-                            <span class="badge bg-accent mb-2">Civil</span>
-                            <h5 class="text-white fw-bold mb-1">Abuja Office Complex</h5>
-                            <p class="text-white-50 small mb-0">Structural design and implementation.</p>
-                        </div>
+                        <a href="assets/images/samples/guest-house-03.jpeg" class="glightbox project-card-link" data-gallery="wincon-portfolio" data-glightbox="title: Concept visualization; description: Courtyard and entrance study">
+                            <img src="assets/images/samples/guest-house-03.jpeg" class="project-img" alt="3D architectural visualization">
+                            <div class="project-overlay">
+                                <span class="badge bg-accent mb-2">Civil</span>
+                                <h5 class="text-white fw-bold mb-1">Concept visualization</h5>
+                                <p class="text-white-50 small mb-0">Courtyard &amp; entrance study</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 portfolio-item" data-category="civil" data-aos="zoom-in" data-aos-delay="150">
+                    <div class="project-card">
+                        <a href="assets/images/samples/guest-house-04.jpeg" class="glightbox project-card-link" data-gallery="wincon-portfolio" data-glightbox="title: Proposed guest house development; description: Delta State — drawing set excerpt">
+                            <img src="assets/images/samples/guest-house-04.jpeg" class="project-img" alt="Right side elevation with title block">
+                            <div class="project-overlay">
+                                <span class="badge bg-accent mb-2">Civil</span>
+                                <h5 class="text-white fw-bold mb-1">Proposed guest house development</h5>
+                                <p class="text-white-50 small mb-0">Delta State — drawing set excerpt</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 portfolio-item" data-category="piling" data-aos="zoom-in">
+                    <div class="project-card">
+                        <a href="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1600&amp;q=85" class="glightbox project-card-link" data-gallery="wincon-portfolio" data-glightbox="title: Victoria Island High-Rise; description: Deep bored piling for 25-floor foundation">
+                            <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80" class="project-img" alt="Piling">
+                            <div class="project-overlay">
+                                <span class="badge bg-accent mb-2">Piling</span>
+                                <h5 class="text-white fw-bold mb-1">Victoria Island High-Rise</h5>
+                                <p class="text-white-50 small mb-0">Deep bored piling for 25-floor foundation.</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 portfolio-item" data-category="civil" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="project-card">
+                        <a href="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1600&amp;q=85" class="glightbox project-card-link" data-gallery="wincon-portfolio" data-glightbox="title: Abuja Office Complex; description: Structural design and implementation">
+                            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80" class="project-img" alt="Civil">
+                            <div class="project-overlay">
+                                <span class="badge bg-accent mb-2">Civil</span>
+                                <h5 class="text-white fw-bold mb-1">Abuja Office Complex</h5>
+                                <p class="text-white-50 small mb-0">Structural design and implementation.</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 portfolio-item" data-category="civil" data-aos="zoom-in" data-aos-delay="200">
                     <div class="project-card">
-                        <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80" class="project-img" alt="Infrastructure">
-                        <div class="project-overlay">
-                            <span class="badge bg-accent mb-2">Infrastructure</span>
-                            <h5 class="text-white fw-bold mb-1">Lekki Drainage Network</h5>
-                            <p class="text-white-50 small mb-0">Large scale civil earthworks.</p>
-                        </div>
+                        <a href="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=1600&amp;q=85" class="glightbox project-card-link" data-gallery="wincon-portfolio" data-glightbox="title: Lekki Drainage Network; description: Large scale civil earthworks">
+                            <img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800&q=80" class="project-img" alt="Infrastructure">
+                            <div class="project-overlay">
+                                <span class="badge bg-accent mb-2">Infrastructure</span>
+                                <h5 class="text-white fw-bold mb-1">Lekki Drainage Network</h5>
+                                <p class="text-white-50 small mb-0">Large scale civil earthworks.</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
                 <!-- Repeat for more projects -->
                 <div class="col-md-6 col-lg-4 portfolio-item" data-category="real-estate" data-aos="zoom-in">
                     <div class="project-card">
-                        <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80" class="project-img" alt="Land development">
-                        <div class="project-overlay">
-                            <span class="badge bg-accent mb-2">Real Estate</span>
-                            <h5 class="text-white fw-bold mb-1">Riverside Estate Plots</h5>
-                            <p class="text-white-50 small mb-0">Land surveying and infrastructure layout.</p>
-                        </div>
+                        <a href="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1600&amp;q=85" class="glightbox project-card-link" data-gallery="wincon-portfolio" data-glightbox="title: Riverside Estate Plots; description: Land surveying and infrastructure layout">
+                            <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80" class="project-img" alt="Land development">
+                            <div class="project-overlay">
+                                <span class="badge bg-accent mb-2">Real Estate</span>
+                                <h5 class="text-white fw-bold mb-1">Riverside Estate Plots</h5>
+                                <p class="text-white-50 small mb-0">Land surveying and infrastructure layout.</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -150,13 +210,24 @@
     </section>
 
     <footer class="bg-primary text-white py-4 text-center">
-        <div class="container"><p class="small mb-0 opacity-50">&copy; 2024 Wincon Piling. Building with Integrity.</p></div>
+        <div class="container"><p class="small mb-0 opacity-50">&copy; 2024 Wincon Pilling Construction Limited. Building with Integrity.</p></div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/js/glightbox.min.js"></script>
     <script>
         AOS.init({ once: true });
+
+        GLightbox({
+            selector: '.glightbox',
+            touchNavigation: true,
+            loop: true,
+            zoomable: true,
+            draggable: true,
+            closeButton: true,
+            descPosition: 'bottom'
+        });
 
         (function () {
             var filterBtns = document.querySelectorAll('.portfolio-filters .filter-btn');
