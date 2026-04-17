@@ -14,6 +14,7 @@ $path = request_path();
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto align-items-center">
+                <li class="nav-item"><a class="nav-link<?= $path === '/' ? ' active' : '' ?>" href="<?= e(base_url()) ?>"<?= $path === '/' ? ' aria-current="page"' : '' ?>>Home</a></li>
                 <li class="nav-item"><a class="nav-link<?= $path === '/about' ? ' active' : '' ?>" href="<?= e(base_url('about')) ?>"<?= $path === '/about' ? ' aria-current="page"' : '' ?>>About</a></li>
                 <li class="nav-item"><a class="nav-link<?= str_starts_with($path, '/services') ? ' active' : '' ?>" href="<?= e(base_url('services')) ?>"<?= str_starts_with($path, '/services') ? ' aria-current="page"' : '' ?>>Services</a></li>
                 <li class="nav-item"><a class="nav-link<?= $path === '/portfolio' ? ' active' : '' ?>" href="<?= e(base_url('portfolio')) ?>"<?= $path === '/portfolio' ? ' aria-current="page"' : '' ?>>Portfolio</a></li>
