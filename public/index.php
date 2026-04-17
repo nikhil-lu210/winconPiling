@@ -8,6 +8,11 @@ define('CORE_PATH', ROOT_PATH . '/core');
 define('CONFIG_PATH', ROOT_PATH . '/config');
 define('STORAGE_PATH', ROOT_PATH . '/storage');
 
+$composerAutoload = ROOT_PATH . '/vendor/autoload.php';
+if (is_file($composerAutoload)) {
+    require_once $composerAutoload;
+}
+
 require_once CONFIG_PATH . '/app.php';
 require_once CORE_PATH . '/helpers.php';
 require_once CORE_PATH . '/Database.php';
@@ -22,6 +27,7 @@ require_once CORE_PATH . '/Validator.php';
 require_once CORE_PATH . '/FileUpload.php';
 require_once CORE_PATH . '/RateLimiter.php';
 require_once CORE_PATH . '/ContactIpLimiter.php';
+require_once CORE_PATH . '/Mail.php';
 require_once CORE_PATH . '/Router.php';
 require_once CORE_PATH . '/App.php';
 

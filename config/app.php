@@ -25,6 +25,8 @@ define('ALLOWED_IMAGE_TYPES', (string) env('ALLOWED_IMAGE_TYPES', 'image/jpeg,im
 
 define('LOG_CHANNEL', (string) env('LOG_CHANNEL', 'file'));
 
+require_once CONFIG_PATH . '/mail.php';
+
 date_default_timezone_set(APP_TIMEZONE);
 
 if (APP_DEBUG) {

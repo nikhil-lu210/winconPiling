@@ -1,0 +1,146 @@
+<?php
+declare(strict_types=1);
+/** @var string $full_name */
+/** @var string $email */
+/** @var string $subject */
+/** @var string $service_interest */
+/** @var string $message */
+/** @var string $reply_mailto_href */
+$service_interest = (($service_interest ?? '') !== '') ? (string) $service_interest : '—';
+?>
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="x-apple-disable-message-reformatting">
+    <title>New Website Inquiry - Wincon Pilling</title>
+    <!--[if mso]>
+    <style>
+        table {border-collapse:collapse;border-spacing:0;border:none;margin:0;}
+        div, td {padding:0;}
+        div {margin:0 !important;}
+    </style>
+    <noscript>
+        <xml>
+            <o:OfficeDocumentSettings>
+                <o:PixelsPerInch>96</o:PixelsPerInch>
+            </o:OfficeDocumentSettings>
+        </xml>
+    </noscript>
+    <![endif]-->
+    <style>
+        body, table, td, div, p, a {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            word-break: break-word;
+            -webkit-font-smoothing: antialiased;
+            background-color: #f8fafc;
+        }
+        @media screen and (max-width: 600px) {
+            .email-container {
+                width: 100% !important;
+                margin: auto !important;
+            }
+            .content-padding {
+                padding: 20px !important;
+            }
+            .button {
+                display: block !important;
+                width: 100% !important;
+                text-align: center !important;
+            }
+        }
+    </style>
+</head>
+<body style="margin:0;padding:0;background-color:#f8fafc;">
+    <table role="presentation" style="width:100%;border-collapse:collapse;border:0;border-spacing:0;background-color:#f8fafc;">
+        <tr>
+            <td align="center" style="padding:40px 10px;">
+                <table role="presentation" class="email-container" style="width:600px;border-collapse:collapse;border:1px solid #e2e8f0;border-spacing:0;text-align:left;background-color:#ffffff;border-radius:8px;overflow:hidden;box-shadow:0 4px 6px -1px rgba(0, 0, 0, 0.1);">
+                    <tr>
+                        <td align="center" style="padding:30px 20px;background-color:#ffffff;border-bottom:3px solid #10b981;">
+                            <h1 style="margin:0;font-size:28px;font-weight:800;letter-spacing:-0.5px;color:#0f172a;">
+                                WINCON<span style="color:#10b981;">PILLING</span>
+                            </h1>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="content-padding" style="padding:40px 40px 20px 40px;">
+                            <h2 style="margin:0 0 15px 0;font-size:20px;font-weight:700;color:#1e293b;">New Inquiry Received</h2>
+                            <p style="margin:0 0 25px 0;font-size:16px;line-height:24px;color:#475569;">
+                                Hello Admin,<br><br>
+                                You have received a new message from the contact form on your website. Here are the details:
+                            </p>
+                            <table role="presentation" style="width:100%;border-collapse:collapse;border:0;border-spacing:0;">
+                                <tr>
+                                    <td style="padding:0 0 5px 0;font-size:12px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;">Full Name</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:0 0 20px 0;font-size:16px;color:#0f172a;font-weight:600;"><?= e($full_name) ?></td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:0 0 5px 0;font-size:12px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;">Email Address</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:0 0 20px 0;font-size:16px;color:#10b981;font-weight:600;">
+                                        <a href="mailto:<?= e($email) ?>" style="color:#10b981;text-decoration:none;"><?= e($email) ?></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:0 0 5px 0;font-size:12px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;">Subject</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:0 0 20px 0;font-size:16px;color:#0f172a;"><?= e($subject) ?></td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:0 0 5px 0;font-size:12px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;">Service Interest</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:0 0 20px 0;font-size:16px;color:#0f172a;"><?= e($service_interest) ?></td>
+                                </tr>
+                            </table>
+                            <table role="presentation" style="width:100%;border-collapse:collapse;border:0;border-spacing:0;margin-top:10px;">
+                                <tr>
+                                    <td style="padding:0 0 5px 0;font-size:12px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;">Message</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding:20px;background-color:#f1f5f9;border-left:4px solid #10b981;border-radius:0 4px 4px 0;font-size:15px;line-height:24px;color:#334155;white-space:pre-wrap;"><?= e($message) ?></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="content-padding" style="padding:20px 40px 40px 40px;">
+                            <table role="presentation" style="width:100%;border-collapse:collapse;border:0;border-spacing:0;">
+                                <tr>
+                                    <td align="center">
+                                        <a href="<?= e($reply_mailto_href) ?>" class="button" style="display:inline-block;padding:14px 30px;background-color:#10b981;color:#ffffff;text-decoration:none;border-radius:6px;font-weight:bold;font-size:16px;text-align:center;letter-spacing:0.5px;">Reply to Sender</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="padding:30px;background-color:#0f172a;text-align:center;">
+                            <p style="margin:0 0 10px 0;font-size:14px;color:#94a3b8;">
+                                <strong>Wincon Pilling and Constructing Company Limited</strong>
+                            </p>
+                            <p style="margin:0 0 10px 0;font-size:12px;color:#64748b;">
+                                RC: 766863 | Incorporated August 20, 2008
+                            </p>
+                            <p style="margin:0;font-size:12px;color:#64748b;">
+                                This email was generated automatically from your website.
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -4,6 +4,17 @@ declare(strict_types=1);
 
 final class ContactController extends BaseController
 {
+    /** Same-origin referer (e.g. home #contact) or /contact — avoids losing flash after POST. */
+    private function redirectBackToForm(): never
+    {
+        $ref = $this->request->header('Referer') ?? '';
+        $base = rtrim((string) APP_URL, '/');
+        if (\is_string($ref) && $ref !== '' && str_starts_with($ref, $base)) {
+            $this->response->redirect($ref);
+        }
+        $this->response->redirect(base_url('contact'));
+    }
+
     public function index(): void
     {
         $settings = $this->siteSettings();
@@ -16,17 +27,19 @@ final class ContactController extends BaseController
 
     public function send(): void
     {
+        /* Avoid names like "website" — browsers/password managers autofill them and block real users. */
         $hp = trim((string) ($this->request->postRaw('_hp') ?? ''));
-        $websiteHp = trim((string) ($this->request->postRaw('website') ?? ''));
-        if ($hp !== '' || $websiteHp !== '') {
-            $this->response->redirect(base_url('contact'));
+        $hpExtra = trim((string) ($this->request->postRaw('_hp_extra') ?? ''));
+        if ($hp !== '' || $hpExtra !== '') {
+            Session::flash('contact_error', 'Submission could not be verified. If you use autofill, try again or clear the form and re-enter your details.');
+            $this->redirectBackToForm();
         }
 
         $ip = $this->request->ip();
         $limiter = new ContactIpLimiter();
         if ($limiter->tooManyAttempts($ip, 3, 3600)) {
             Session::flash('contact_error', 'Too many submissions from this address. Please try again later.');
-            $this->response->redirect(base_url('contact'));
+            $this->redirectBackToForm();
         }
 
         $strip = static fn (string $s): string => strip_tags($s);
@@ -55,7 +68,7 @@ final class ContactController extends BaseController
                 'message' => $data['message'],
             ]);
             Session::flash('errors', $validator->getErrors());
-            $this->response->redirect(base_url('contact'));
+            $this->redirectBackToForm();
         }
 
         $messageModel = new MessageModel();
@@ -68,9 +81,12 @@ final class ContactController extends BaseController
             'ip_address' => $ip,
         ]);
 
+        $settings = $this->siteSettings();
+        Mail::notifyContactSubmission($data, $settings['company_email'] ?? null);
+
         $limiter->recordSuccess($ip, 3600);
         Session::delete('_old_input');
         flash('success', 'Thank you! Your message has been sent.');
-        $this->response->redirect(base_url('contact'));
+        $this->redirectBackToForm();
     }
 }

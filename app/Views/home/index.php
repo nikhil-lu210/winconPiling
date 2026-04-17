@@ -293,8 +293,8 @@ $previewServices = array_slice($services, 0, 3);
                 <div class="card-premium p-5 shadow-lg border-0">
                     <form id="contactForm" method="post" action="<?= e(base_url('contact/send')) ?>">
                         <?= csrf_field() ?>
-                        <input type="text" name="_hp" class="honeypot-field" tabindex="-1" autocomplete="off" aria-hidden="true">
-                        <input type="text" name="website" class="honeypot-field" tabindex="-1" autocomplete="off" aria-hidden="true">
+                        <input type="text" name="_hp" class="honeypot-field" tabindex="-1" autocomplete="new-password" autocorrect="off" aria-hidden="true">
+                        <input type="text" name="_hp_extra" class="honeypot-field" tabindex="-1" autocomplete="new-password" autocorrect="off" aria-hidden="true">
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <label class="form-label fw-bold small">Full Name</label>
