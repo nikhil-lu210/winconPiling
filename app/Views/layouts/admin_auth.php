@@ -23,7 +23,7 @@ $pageTitle = $pageTitle ?? 'Admin';
             justify-content: center;
             padding: 1.5rem;
             font-family: "Plus Jakarta Sans", system-ui, sans-serif;
-            background: radial-gradient(ellipse 120% 80% at 50% 0%, #2a3a52 0%, #121820 55%, #0b0e12 100%);
+            background: radial-gradient(ellipse 120% 80% at 50% 0%, #1a2d52 0%, #0f1e3a 55%, #070d18 100%);
             color: #e8ecf1;
         }
         .admin-auth-card {
@@ -96,8 +96,8 @@ $pageTitle = $pageTitle ?? 'Admin';
         }
         .admin-auth-field input:focus {
             outline: none;
-            border-color: #f0a500;
-            box-shadow: 0 0 0 2px rgba(240, 165, 0, 0.2);
+            border-color: #f2b705;
+            box-shadow: 0 0 0 2px rgba(242, 183, 5, 0.22);
         }
         .admin-auth-toggle-pw {
             position: absolute;
@@ -111,15 +111,15 @@ $pageTitle = $pageTitle ?? 'Admin';
             padding: 0.35rem 0.5rem;
             font-size: 0.8rem;
         }
-        .admin-auth-toggle-pw:hover { color: #f0a500; }
+        .admin-auth-toggle-pw:hover { color: #f2b705; }
         .admin-auth-submit {
             width: 100%;
             padding: 0.75rem;
             margin-top: 0.25rem;
             border: none;
             border-radius: 8px;
-            background: #f0a500;
-            color: #1a1f26;
+            background: #f2b705;
+            color: #0f1e3a;
             font-weight: 700;
             font-size: 0.95rem;
             cursor: pointer;

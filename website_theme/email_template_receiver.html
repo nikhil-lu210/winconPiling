@@ -30,7 +30,7 @@
             width: 100%;
             word-break: break-word;
             -webkit-font-smoothing: antialiased;
-            background-color: #f8fafc;
+            background-color: #f4f4f4;
         }
         /* Mobile Responsiveness */
         @media screen and (max-width: 600px) {
@@ -49,10 +49,10 @@
         }
     </style>
 </head>
-<body style="margin:0;padding:0;background-color:#f8fafc;">
+<body style="margin:0;padding:0;background-color:#f4f4f4;">
     
     <!-- Wrapper -->
-    <table role="presentation" style="width:100%;border-collapse:collapse;border:0;border-spacing:0;background-color:#f8fafc;">
+    <table role="presentation" style="width:100%;border-collapse:collapse;border:0;border-spacing:0;background-color:#f4f4f4;">
         <tr>
             <td align="center" style="padding:40px 10px;">
                 
@@ -61,10 +61,10 @@
                     
                     <!-- Header -->
                     <tr>
-                        <td align="center" style="padding:30px 20px;background-color:#ffffff;border-bottom:3px solid #10b981;">
+                        <td align="center" style="padding:30px 20px;background-color:#ffffff;border-bottom:3px solid #f2b705;">
                             <!-- Using Text-based Logo to avoid image blocking in emails -->
-                            <h1 style="margin:0;font-size:28px;font-weight:800;letter-spacing:-0.5px;color:#0f172a;">
-                                WINCON<span style="color:#10b981;">PILLING</span>
+                            <h1 style="margin:0;font-size:28px;font-weight:800;letter-spacing:-0.5px;color:#0f1e3a;">
+                                WINCON<span style="color:#f2b705;">PILLING</span>
                             </h1>
                         </td>
                     </tr>
@@ -72,7 +72,7 @@
                     <!-- Body Content -->
                     <tr>
                         <td class="content-padding" style="padding:40px 40px 20px 40px;">
-                            <h2 style="margin:0 0 15px 0;font-size:20px;font-weight:700;color:#1e293b;">New Inquiry Received</h2>
+                            <h2 style="margin:0 0 15px 0;font-size:20px;font-weight:700;color:#1e2f4a;">New Inquiry Received</h2>
                             <p style="margin:0 0 25px 0;font-size:16px;line-height:24px;color:#475569;">
                                 Hello Admin,<br><br>
                                 You have received a new message from the contact form on your website. Here are the details:
@@ -85,7 +85,7 @@
                                     <td style="padding:0 0 5px 0;font-size:12px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;">Full Name</td>
                                 </tr>
                                 <tr>
-                                    <td style="padding:0 0 20px 0;font-size:16px;color:#0f172a;font-weight:600;">{{full_name}}</td>
+                                    <td style="padding:0 0 20px 0;font-size:16px;color:#0f1e3a;font-weight:600;">{{full_name}}</td>
                                 </tr>
 
                                 <!-- Email Address -->
@@ -93,8 +93,8 @@
                                     <td style="padding:0 0 5px 0;font-size:12px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;">Email Address</td>
                                 </tr>
                                 <tr>
-                                    <td style="padding:0 0 20px 0;font-size:16px;color:#10b981;font-weight:600;">
-                                        <a href="mailto:{{email}}" style="color:#10b981;text-decoration:none;">{{email}}</a>
+                                    <td style="padding:0 0 20px 0;font-size:16px;color:#c99404;font-weight:600;">
+                                        <a href="mailto:{{email}}" style="color:#c99404;text-decoration:none;">{{email}}</a>
                                     </td>
                                 </tr>
 
@@ -103,7 +103,7 @@
                                     <td style="padding:0 0 5px 0;font-size:12px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;">Subject</td>
                                 </tr>
                                 <tr>
-                                    <td style="padding:0 0 20px 0;font-size:16px;color:#0f172a;">{{subject}}</td>
+                                    <td style="padding:0 0 20px 0;font-size:16px;color:#0f1e3a;">{{subject}}</td>
                                 </tr>
 
                                 <!-- Service Interest -->
@@ -111,7 +111,7 @@
                                     <td style="padding:0 0 5px 0;font-size:12px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;">Service Interest</td>
                                 </tr>
                                 <tr>
-                                    <td style="padding:0 0 20px 0;font-size:16px;color:#0f172a;">{{service_interest}}</td>
+                                    <td style="padding:0 0 20px 0;font-size:16px;color:#0f1e3a;">{{service_interest}}</td>
                                 </tr>
                             </table>
 
@@ -121,7 +121,7 @@
                                     <td style="padding:0 0 5px 0;font-size:12px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:1px;">Message</td>
                                 </tr>
                                 <tr>
-                                    <td style="padding:20px;background-color:#f1f5f9;border-left:4px solid #10b981;border-radius:0 4px 4px 0;font-size:15px;line-height:24px;color:#334155;white-space:pre-wrap;">{{message}}</td>
+                                    <td style="padding:20px;background-color:#f4f4f4;border-left:4px solid #f2b705;border-radius:0 4px 4px 0;font-size:15px;line-height:24px;color:#334155;white-space:pre-wrap;">{{message}}</td>
                                 </tr>
                             </table>
 
@@ -134,7 +134,7 @@
                             <table role="presentation" style="width:100%;border-collapse:collapse;border:0;border-spacing:0;">
                                 <tr>
                                     <td align="center">
-                                        <a href="{{reply_mailto_href}}" class="button" style="display:inline-block;padding:14px 30px;background-color:#10b981;color:#ffffff;text-decoration:none;border-radius:6px;font-weight:bold;font-size:16px;text-align:center;letter-spacing:0.5px;">Reply to Sender</a>
+                                        <a href="{{reply_mailto_href}}" class="button" style="display:inline-block;padding:14px 30px;background-color:#f2b705;color:#0f1e3a;text-decoration:none;border-radius:6px;font-weight:bold;font-size:16px;text-align:center;letter-spacing:0.5px;">Reply to Sender</a>
                                     </td>
                                 </tr>
                             </table>
@@ -143,7 +143,7 @@
 
                     <!-- Footer -->
                     <tr>
-                        <td style="padding:30px;background-color:#0f172a;text-align:center;">
+                        <td style="padding:30px;background-color:#0f1e3a;text-align:center;">
                             <p style="margin:0 0 10px 0;font-size:14px;color:#94a3b8;">
                                 <strong>Wincon Pilling and Constructing Company Limited</strong>
                             </p>

@@ -1,13 +1,14 @@
-/* Wincon admin — dark navy + amber accent */
+/* Wincon admin — Dark Navy #0F1E3A + Construction Yellow #F2B705 */
 :root {
-  --admin-sidebar: #1e2a3a;
-  --admin-sidebar-hover: #263445;
-  --admin-accent: #f0a500;
-  --admin-accent-dim: #c68600;
-  --admin-bg: #f5f7fa;
+  --admin-sidebar: #0f1e3a;
+  --admin-sidebar-hover: #1a2d52;
+  --admin-accent: #f2b705;
+  --admin-accent-dim: #c99404;
+  --admin-bg: #f4f4f4;
   --admin-text: #1a1f26;
-  --admin-muted: #5c6673;
-  --admin-border: #e2e6ec;
+  --admin-muted: #5c6570;
+  --admin-border: rgba(176, 183, 195, 0.45);
+  --admin-steel: #b0b7c3;
   --admin-sidebar-w: 260px;
 }
 
@@ -88,7 +89,7 @@ a {
 }
 
 .admin-nav a.is-active {
-  background: rgba(240, 165, 0, 0.12);
+  background: rgba(242, 183, 5, 0.12);
   border-left-color: var(--admin-accent);
   color: #fff;
 }
@@ -264,7 +265,7 @@ a {
 
 .admin-action-link:hover {
   border-color: var(--admin-accent);
-  box-shadow: 0 2px 8px rgba(240, 165, 0, 0.15);
+  box-shadow: 0 2px 8px rgba(242, 183, 5, 0.15);
 }
 
 .admin-table-wrap {
@@ -310,7 +311,7 @@ a {
 }
 
 .admin-badge--unread {
-  background: rgba(240, 165, 0, 0.2);
+  background: rgba(242, 183, 5, 0.2);
   color: #8a5a00;
 }
 
@@ -556,7 +557,7 @@ body.admin-sidebar-open .admin-sidebar-backdrop {
 }
 
 .admin-toggle.is-on {
-  background: rgba(240, 165, 0, 0.2);
+  background: rgba(242, 183, 5, 0.2);
   border-color: var(--admin-accent);
 }
 
@@ -617,7 +618,7 @@ body.admin-sidebar-open .admin-sidebar-backdrop {
 }
 
 .admin-filter-tab.is-active {
-  background: rgba(240, 165, 0, 0.15);
+  background: rgba(242, 183, 5, 0.15);
   border-color: var(--admin-accent);
   color: var(--admin-text);
 }
@@ -642,7 +643,7 @@ body.admin-sidebar-open .admin-sidebar-backdrop {
 
 .admin-msg--unread {
   font-weight: 600;
-  background: rgba(240, 165, 0, 0.06);
+  background: rgba(242, 183, 5, 0.06);
 }
 
 .admin-star-btn {

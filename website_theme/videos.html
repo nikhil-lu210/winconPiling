@@ -16,10 +16,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lite-youtube-embed@0.3.4/src/lite-yt-embed.css">
     <style>
         :root {
-            --primary: #0f172a;
-            --accent: #10b981;
-            --accent-dark: #059669;
-            --bg-soft: #f8fafc;
+            --primary: #0f1e3a;
+            --bs-primary: #0f1e3a;
+            --bs-primary-rgb: 15, 30, 58;
+            --accent: #f2b705;
+            --accent-dark: #c99404;
+            --bg-soft: #f4f4f4;
             --glass: rgba(255, 255, 255, 0.95);
         }
 
@@ -28,14 +30,14 @@
         .navbar { padding: 1rem 0; background: var(--glass); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(226, 232, 240, 0.8); z-index: 1050; }
         .navbar-brand { font-weight: 800; font-size: 1.5rem; color: var(--primary) !important; }
         .btn-premium { padding: 14px 32px; border-radius: 12px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; }
-        .btn-accent { background: var(--accent); color: white; border: none; box-shadow: 0 4px 14px 0 rgba(16, 185, 129, 0.39); }
-        .btn-accent:hover { background: var(--accent-dark); color: white; }
+        .btn-accent { background: var(--accent); color: var(--primary); border: none; box-shadow: 0 4px 14px 0 rgba(242, 183, 5, 0.35); }
+        .btn-accent:hover { background: var(--accent-dark); color: #fff; }
         .text-accent { color: var(--accent) !important; }
         .section-padding { padding: 80px 0; }
-        .section-tag { display: inline-block; padding: 6px 16px; background: rgba(16, 185, 129, 0.1); color: var(--accent); border-radius: 100px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1rem; }
+        .section-tag { display: inline-block; padding: 6px 16px; background: rgba(242, 183, 5, 0.12); color: var(--accent); border-radius: 100px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 1rem; }
         .inner-hero {
             padding: 120px 0 60px;
-            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&amp;q=80');
+            background: linear-gradient(rgba(15, 30, 58, 0.85), rgba(15, 30, 58, 0.85)), url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1920&amp;q=80');
             background-size: cover;
             background-position: center;
             color: white;
@@ -50,7 +52,7 @@
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 10px 25px -5px rgb(0 0 0 / 0.08);
-            background: #0f172a;
+            background: #0f1e3a;
         }
         .video-card lite-youtube {
             width: 100%;
@@ -60,7 +62,7 @@
         .video-caption {
             padding: 1rem 1.25rem 1.25rem;
             background: #fff;
-            border: 1px solid #f1f5f9;
+            border: 1px solid #e8eaed;
             border-top: none;
             border-radius: 0 0 20px 20px;
         }

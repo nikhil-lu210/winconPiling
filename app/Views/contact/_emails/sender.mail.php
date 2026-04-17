@@ -38,7 +38,7 @@ $service_interest = (($service_interest ?? '') !== '') ? (string) $service_inter
             width: 100%;
             word-break: break-word;
             -webkit-font-smoothing: antialiased;
-            background-color: #f8fafc;
+            background-color: #f4f4f4;
         }
         @media screen and (max-width: 600px) {
             .email-container {
@@ -56,21 +56,21 @@ $service_interest = (($service_interest ?? '') !== '') ? (string) $service_inter
         }
     </style>
 </head>
-<body style="margin:0;padding:0;background-color:#f8fafc;">
-    <table role="presentation" style="width:100%;border-collapse:collapse;border:0;border-spacing:0;background-color:#f8fafc;">
+<body style="margin:0;padding:0;background-color:#f4f4f4;">
+    <table role="presentation" style="width:100%;border-collapse:collapse;border:0;border-spacing:0;background-color:#f4f4f4;">
         <tr>
             <td align="center" style="padding:40px 10px;">
-                <table role="presentation" class="email-container" style="width:600px;border-collapse:collapse;border:1px solid #e2e8f0;border-spacing:0;text-align:left;background-color:#ffffff;border-radius:8px;overflow:hidden;box-shadow:0 4px 6px -1px rgba(0, 0, 0, 0.1);">
+                <table role="presentation" class="email-container" style="width:600px;border-collapse:collapse;border:1px solid #d1d6e0;border-spacing:0;text-align:left;background-color:#ffffff;border-radius:8px;overflow:hidden;box-shadow:0 4px 6px -1px rgba(0, 0, 0, 0.1);">
                     <tr>
-                        <td align="center" style="padding:30px 20px;background-color:#ffffff;border-bottom:3px solid #10b981;">
-                            <h1 style="margin:0;font-size:28px;font-weight:800;letter-spacing:-0.5px;color:#0f172a;">
-                                WINCON<span style="color:#10b981;">PILLING</span>
+                        <td align="center" style="padding:30px 20px;background-color:#ffffff;border-bottom:3px solid #f2b705;">
+                            <h1 style="margin:0;font-size:28px;font-weight:800;letter-spacing:-0.5px;color:#0f1e3a;">
+                                WINCON<span style="color:#f2b705;">PILLING</span>
                             </h1>
                         </td>
                     </tr>
                     <tr>
-                        <td align="center" style="padding:40px 40px 20px 40px;background-color:#ecfdf5;">
-                            <h2 style="margin:0;font-size:24px;font-weight:800;color:#059669;">Message Received!</h2>
+                        <td align="center" style="padding:40px 40px 20px 40px;background-color:#fff8e6;">
+                            <h2 style="margin:0;font-size:24px;font-weight:800;color:#c99404;">Message Received!</h2>
                         </td>
                     </tr>
                     <tr>
@@ -84,10 +84,10 @@ $service_interest = (($service_interest ?? '') !== '') ? (string) $service_inter
                             <p style="margin:0 0 30px 0;font-size:16px;line-height:26px;color:#475569;">
                                 Our specialist team is currently reviewing your message. We aim to respond to all inquiries as quickly as possible, typically within 1-2 business days.
                             </p>
-                            <table role="presentation" style="width:100%;border-collapse:collapse;border:0;border-spacing:0;background-color:#f8fafc;border-radius:6px;border:1px solid #e2e8f0;">
+                            <table role="presentation" style="width:100%;border-collapse:collapse;border:0;border-spacing:0;background-color:#f4f4f4;border-radius:6px;border:1px solid #d1d6e0;">
                                 <tr>
                                     <td style="padding:20px;">
-                                        <p style="margin:0 0 10px 0;font-size:14px;font-weight:700;color:#0f172a;text-transform:uppercase;letter-spacing:0.5px;">Summary of your inquiry:</p>
+                                        <p style="margin:0 0 10px 0;font-size:14px;font-weight:700;color:#0f1e3a;text-transform:uppercase;letter-spacing:0.5px;">Summary of your inquiry:</p>
                                         <p style="margin:0 0 5px 0;font-size:14px;color:#475569;"><strong>Service Interest:</strong> <?= e($service_interest) ?></p>
                                         <p style="margin:0;font-size:14px;color:#475569;line-height:22px;"><strong>Message:</strong><br><span style="color:#64748b;font-style:italic;">"<?= e($message) ?>"</span></p>
                                     </td>
@@ -103,14 +103,14 @@ $service_interest = (($service_interest ?? '') !== '') ? (string) $service_inter
                             <table role="presentation" style="width:100%;border-collapse:collapse;border:0;border-spacing:0;">
                                 <tr>
                                     <td align="center">
-                                        <a href="tel:+2348037568817" class="button" style="display:inline-block;padding:14px 30px;background-color:#0f172a;color:#ffffff;text-decoration:none;border-radius:6px;font-weight:bold;font-size:16px;text-align:center;letter-spacing:0.5px;">Call Us Now</a>
+                                        <a href="tel:+2348037568817" class="button" style="display:inline-block;padding:14px 30px;background-color:#0f1e3a;color:#ffffff;text-decoration:none;border-radius:6px;font-weight:bold;font-size:16px;text-align:center;letter-spacing:0.5px;">Call Us Now</a>
                                     </td>
                                 </tr>
                             </table>
                         </td>
                     </tr>
                     <tr>
-                        <td style="padding:30px;background-color:#0f172a;text-align:center;">
+                        <td style="padding:30px;background-color:#0f1e3a;text-align:center;">
                             <p style="margin:0 0 10px 0;font-size:14px;color:#e2e8f0;">
                                 <strong>Wincon Pilling and Constructing Company Limited</strong>
                             </p>
@@ -120,7 +120,7 @@ $service_interest = (($service_interest ?? '') !== '') ? (string) $service_inter
                             <table role="presentation" style="width:100%;border-collapse:collapse;border:0;border-spacing:0;">
                                 <tr>
                                     <td align="center">
-                                        <a href="<?= e($site_url) ?>" style="color:#10b981;text-decoration:none;font-size:13px;font-weight:bold;">Visit Our Website</a>
+                                        <a href="<?= e($site_url) ?>" style="color:#f2b705;text-decoration:none;font-size:13px;font-weight:bold;">Visit Our Website</a>
                                     </td>
                                 </tr>
                             </table>

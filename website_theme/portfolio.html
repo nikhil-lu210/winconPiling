@@ -15,11 +15,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox@3.2.0/dist/css/glightbox.min.css">
     <style>
         :root {
-            --primary: #0f172a;
-            --accent: #10b981;
-            --accent-dark: #059669;
-            --accent-soft: rgba(16, 185, 129, 0.1);
-            --bg-soft: #f8fafc;
+            --primary: #0f1e3a;
+            --bs-primary: #0f1e3a;
+            --bs-primary-rgb: 15, 30, 58;
+            --accent: #f2b705;
+            --accent-dark: #c99404;
+            --accent-soft: rgba(242, 183, 5, 0.12);
+            --bg-soft: #f4f4f4;
             --glass: rgba(255, 255, 255, 0.95);
         }
 
@@ -28,13 +30,13 @@
         .navbar { padding: 1rem 0; background: var(--glass); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(226, 232, 240, 0.8); z-index: 1050; }
         .navbar-brand { font-weight: 800; font-size: 1.5rem; color: var(--primary) !important; }
         .btn-premium { padding: 14px 32px; border-radius: 12px; font-weight: 700; text-decoration: none; display: inline-flex; align-items: center; }
-        .btn-accent { background: var(--accent); color: white; border: none; box-shadow: 0 4px 14px 0 rgba(16, 185, 129, 0.39); }
-        .btn-accent:hover { background: var(--accent-dark); color: white; }
+        .btn-accent { background: var(--accent); color: var(--primary); border: none; box-shadow: 0 4px 14px 0 rgba(242, 183, 5, 0.35); }
+        .btn-accent:hover { background: var(--accent-dark); color: #fff; }
         .text-accent { color: var(--accent) !important; }
         .bg-accent { background-color: var(--accent) !important; color: #fff !important; }
         .inner-hero {
             padding: 120px 0 60px;
-            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1920&q=80');
+            background: linear-gradient(rgba(15, 30, 58, 0.8), rgba(15, 30, 58, 0.8)), url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
             color: white;
@@ -53,8 +55,8 @@
         .project-card:hover .project-card-link .project-img { transform: scale(1.1); }
 
         .filter-btn { padding: 8px 20px; border-radius: 100px; border: 1px solid #ddd; background: white; font-weight: 600; font-size: 0.85rem; transition: all 0.3s; margin: 0 5px; color: var(--primary); }
-        .filter-btn.active { background: var(--accent); border-color: var(--accent); color: white; }
-        .filter-btn:not(.active):hover { background: rgba(16, 185, 129, 0.12); border-color: var(--accent); color: var(--accent); }
+        .filter-btn.active { background: var(--accent); border-color: var(--accent); color: var(--primary); }
+        .filter-btn:not(.active):hover { background: rgba(242, 183, 5, 0.12); border-color: var(--accent); color: var(--accent); }
 
         .nav-link { font-weight: 600; position: relative; padding-bottom: 4px !important; }
         .nav-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 2px; background: var(--accent); transition: width 0.3s ease; }

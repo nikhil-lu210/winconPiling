@@ -14,12 +14,14 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         :root {
-            --primary: #0f172a;
-            --accent: #10b981;
-            --accent-soft: rgba(16, 185, 129, 0.1);
-            --text-main: #0f172a;
-            --text-muted: #64748b;
-            --bg-soft: #f8fafc;
+            --primary: #0f1e3a;
+            --bs-primary: #0f1e3a;
+            --bs-primary-rgb: 15, 30, 58;
+            --accent: #f2b705;
+            --accent-soft: rgba(242, 183, 5, 0.12);
+            --text-main: #0f1e3a;
+            --text-muted: #5c6570;
+            --bg-soft: #f4f4f4;
             --glass: rgba(255, 255, 255, 0.8);
             --shadow-sm: 0 4px 6px -1px rgb(0 0 0 / 0.1);
         }
@@ -35,7 +37,7 @@
 
         .inner-hero {
             padding: 120px 0 60px;
-            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1920&q=80');
+            background: linear-gradient(rgba(15, 30, 58, 0.8), rgba(15, 30, 58, 0.8)), url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
             color: white;
@@ -43,7 +45,7 @@
         }
 
         .section-padding { padding: 80px 0; }
-        .card-premium { background: white; border: 1px solid #f1f5f9; border-radius: 24px; padding: 40px; transition: all 0.4s ease; height: 100%; box-shadow: var(--shadow-sm); }
+        .card-premium { background: white; border: 1px solid #e8eaed; border-radius: 24px; padding: 40px; transition: all 0.4s ease; height: 100%; box-shadow: var(--shadow-sm); }
         .card-premium:hover { transform: translateY(-10px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); }
         
         .service-icon { width: 70px; height: 70px; background: var(--accent-soft); color: var(--accent); border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin-bottom: 25px; }
@@ -52,8 +54,8 @@
         .btn-link-accent:hover { gap: 12px; }
 
         .btn-premium { padding: 14px 32px; border-radius: 12px; font-weight: 700; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); display: inline-flex; align-items: center; gap: 10px; text-decoration: none; }
-        .btn-accent { background: var(--accent); color: white; border: none; box-shadow: 0 4px 14px 0 rgba(16, 185, 129, 0.39); }
-        .btn-accent:hover { background: #059669; transform: translateY(-2px); color: white; }
+        .btn-accent { background: var(--accent); color: var(--primary); border: none; box-shadow: 0 4px 14px 0 rgba(242, 183, 5, 0.35); }
+        .btn-accent:hover { background: var(--accent-dark); transform: translateY(-2px); color: #fff; }
         .text-accent { color: var(--accent) !important; }
     </style>
 </head>
