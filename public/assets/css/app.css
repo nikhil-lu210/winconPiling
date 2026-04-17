@@ -1,0 +1,5 @@
+/* Wincon public styles — Phase 1 placeholder; port from website_theme in later phases */
+body {
+    font-family: system-ui, sans-serif;
+    margin: 2rem;
+}

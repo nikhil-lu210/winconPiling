@@ -1,0 +1,10 @@
+.env
+/database/wincon.db
+/storage/logs/*.log
+/storage/cache/*
+/public/assets/uploads/gallery/*
+/public/assets/uploads/thumbnails/*
+!**/.gitkeep
+/vendor/
+.DS_Store
+Thumbs.db
