@@ -4,13 +4,30 @@ declare(strict_types=1);
 
 namespace Admin;
 
-final class DashboardController extends \BaseController
+final class DashboardController extends AdminBaseController
 {
     public function index(): void
     {
-        $this->response->html(
-            '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Dashboard</title></head><body>'
-            . '<h1>Dashboard</h1><p>Phase 1 scaffold.</p></body></html>'
-        );
+        $galleryModel = new \GalleryModel();
+        $videoModel = new \VideoModel();
+        $messageModel = new \MessageModel();
+        $landModel = new \LandListingModel();
+
+        $galleryCount = $galleryModel->countAll();
+        $videoCount = $videoModel->countAll();
+        $messageCount = $messageModel->countAll();
+        $unreadMessages = $messageModel->countUnread();
+        $landCount = $landModel->countAll();
+        $recentMessages = $messageModel->getRecent(5);
+
+        $this->render('admin/dashboard/index', [
+            'pageTitle' => 'Dashboard',
+            'galleryCount' => $galleryCount,
+            'videoCount' => $videoCount,
+            'messageCount' => $messageCount,
+            'unreadMessages' => $unreadMessages,
+            'landCount' => $landCount,
+            'recentMessages' => $recentMessages,
+        ]);
     }
 }

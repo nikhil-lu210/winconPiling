@@ -73,6 +73,14 @@ final class Validator
                         break;
                     }
                 }
+                if ($rule === 'youtube_id' && (!is_string($value) || !preg_match('/^[a-zA-Z0-9_-]{11}$/', $value))) {
+                    $this->errors[$field] = 'The ' . $field . ' must be a valid 11-character YouTube video ID.';
+                    break;
+                }
+                if ($rule === 'slug' && (!is_string($value) || !preg_match('/^[a-z0-9]+(?:-[a-z0-9]+)*$/', $value))) {
+                    $this->errors[$field] = 'The ' . $field . ' must be lowercase letters, numbers, and hyphens only.';
+                    break;
+                }
             }
         }
         return $this->errors === [];

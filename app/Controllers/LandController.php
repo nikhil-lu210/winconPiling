@@ -6,9 +6,18 @@ final class LandController extends BaseController
 {
     public function index(): void
     {
-        $this->response->html(
-            '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Land Investment</title></head><body>'
-            . '<h1>Land Investment</h1><p>Phase 1 scaffold.</p></body></html>'
-        );
+        $landModel = new LandListingModel();
+        $landListings = $landModel->getAll();
+        $pageModel = new PageContentModel();
+        $content = $pageModel->getByPage('land');
+        $settings = $this->siteSettings();
+
+        $this->render('land/index', [
+            'pageTitle' => 'Land Investment & Real Estate - Wincon Pilling Construction Limited',
+            'metaDescription' => 'Verified land opportunities and real estate with Wincon Pilling Construction Limited.',
+            'landListings' => $landListings,
+            'content' => $content,
+            'settings' => $settings,
+        ]);
     }
 }

@@ -6,9 +6,15 @@ final class AboutController extends BaseController
 {
     public function index(): void
     {
-        $this->response->html(
-            '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>About</title></head><body>'
-            . '<h1>About</h1><p>Phase 1 scaffold.</p></body></html>'
-        );
+        $pageModel = new PageContentModel();
+        $content = $pageModel->getByPage('about');
+        $settings = $this->siteSettings();
+
+        $this->render('about/index', [
+            'pageTitle' => 'About Us - Wincon Pilling Construction Limited',
+            'metaDescription' => 'About Wincon Pilling Construction Limited — mission, vision, and values since 2008.',
+            'content' => $content,
+            'settings' => $settings,
+        ]);
     }
 }

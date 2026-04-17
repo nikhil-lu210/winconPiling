@@ -30,6 +30,8 @@ final class App
             if (str_starts_with($class, 'Admin\\')) {
                 $short = substr($class, strlen('Admin\\'));
                 $path = APP_PATH . '/Controllers/Admin/' . str_replace('\\', '/', $short) . '.php';
+            } elseif (str_ends_with($class, 'Model')) {
+                $path = APP_PATH . '/Models/' . $class . '.php';
             } else {
                 $path = APP_PATH . '/Controllers/' . str_replace('\\', '/', $class) . '.php';
             }

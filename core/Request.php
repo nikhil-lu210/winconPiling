@@ -56,6 +56,12 @@ final class Request
         return $this->sanitize($_POST[$key]);
     }
 
+    /** Raw POST value (no strip_tags) — use sparingly, e.g. honeypot checks. */
+    public function postRaw(string $key, mixed $default = null): mixed
+    {
+        return $_POST[$key] ?? $default;
+    }
+
     public function files(string $key): mixed
     {
         return $_FILES[$key] ?? null;
@@ -87,6 +93,29 @@ final class Request
         return $this->getMethod() === 'POST';
     }
 
+    /** @return array<string, mixed>|null */
+    public function jsonBody(): ?array
+    {
+        $raw = file_get_contents('php://input');
+        if ($raw === false || $raw === '') {
+            return null;
+        }
+        $data = json_decode($raw, true);
+        return is_array($data) ? $data : null;
+    }
+
+    public function header(string $name): ?string
+    {
+        $n = strtolower($name);
+        if ($n === 'referer' || $n === 'referrer') {
+            $v = $_SERVER['HTTP_REFERER'] ?? null;
+            return is_string($v) ? $v : null;
+        }
+        $key = 'HTTP_' . strtoupper(str_replace('-', '_', $name));
+        $v = $_SERVER[$key] ?? null;
+        return is_string($v) ? $v : null;
+    }
+
     public function all(): array
     {
         return array_merge($_GET, $_POST);
@@ -101,7 +130,7 @@ final class Request
             return $value;
         }
         if (is_string($value)) {
-            return strip_tags(trim($value));
+            return trim($value);
         }
         return $value;
     }

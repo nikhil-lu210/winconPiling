@@ -14,6 +14,7 @@ final class Auth
     public static function login(array $user): void
     {
         Session::regenerate();
+        unset($user['password_hash']);
         Session::set(self::$sessionKey, $user);
     }
 

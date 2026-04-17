@@ -4,6 +4,7 @@
 /storage/cache/*
 /public/assets/uploads/gallery/*
 /public/assets/uploads/thumbnails/*
+/public/assets/uploads/land/*
 !**/.gitkeep
 /vendor/
 .DS_Store

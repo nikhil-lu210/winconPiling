@@ -29,12 +29,23 @@ final class Response
 
     public function abort(int $code, string $message = ''): never
     {
-        http_response_code($code);
         header('Content-Type: text/html; charset=UTF-8');
-        $title = 'Error ' . $code;
-        $safe = e($message !== '' ? $message : $title);
-        echo '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">'
-            . '<title>' . e($title) . '</title></head><body><h1>' . e($title) . '</h1><p>' . $safe . '</p></body></html>';
+        $errorMessage = $message;
+        $map = [403 => '403.php', 404 => '404.php', 500 => '500.php'];
+        $file = $map[$code] ?? null;
+        if ($file === null) {
+            $code = 404;
+            $file = '404.php';
+        }
+        $path = APP_PATH . '/Views/errors/' . $file;
+        if (!is_file($path)) {
+            http_response_code($code);
+            echo '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Error</title></head><body><p>'
+                . e($message !== '' ? $message : 'Error ' . $code) . '</p></body></html>';
+            exit;
+        }
+        http_response_code($code);
+        include $path;
         exit;
     }
 }

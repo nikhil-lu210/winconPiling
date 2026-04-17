@@ -6,10 +6,32 @@ final class HomeController extends BaseController
 {
     public function index(): void
     {
-        $this->response->html(
-            '<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Wincon Pilling — Home</title>'
-            . '<link rel="stylesheet" href="' . e(asset('css/app.css')) . '"></head><body>'
-            . '<h1>Wincon Pilling Construction</h1><p>Phase 1 scaffold — home route OK.</p></body></html>'
-        );
+        $pageModel = new PageContentModel();
+        $content = $pageModel->getByPage('home');
+
+        $galleryModel = new GalleryModel();
+        $featuredGallery = $galleryModel->getFeatured(3);
+
+        $videoModel = new VideoModel();
+        $featuredVideos = $videoModel->getFeatured(2);
+
+        $serviceModel = new ServiceModel();
+        $services = $serviceModel->getAll();
+
+        $landModel = new LandListingModel();
+        $landListings = array_slice($landModel->getAll(), 0, 2);
+
+        $settings = $this->siteSettings();
+
+        $this->render('home/index', [
+            'pageTitle' => 'Wincon Pilling Construction Limited',
+            'metaDescription' => 'Wincon Pilling Construction Limited — engineering, deep foundations, and civil construction across Nigeria.',
+            'content' => $content,
+            'featuredGallery' => $featuredGallery,
+            'featuredVideos' => $featuredVideos,
+            'services' => $services,
+            'landListings' => $landListings,
+            'settings' => $settings,
+        ]);
     }
 }

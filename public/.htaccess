@@ -1,5 +1,14 @@
 Options -Indexes
 RewriteEngine On
+
+# Block dotfiles and sensitive extensions in public
+RewriteRule (^|/)\.(git|env|htaccess|htpasswd) - [F,L]
+<IfModule mod_authz_core.c>
+    <FilesMatch "(?i)\.(env|sql|db|sqlite|log|bak|md)$">
+        Require all denied
+    </FilesMatch>
+</IfModule>
+
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]

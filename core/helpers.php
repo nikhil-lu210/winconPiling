@@ -64,6 +64,71 @@ function upload_url(string $path): string
     return base_url('assets/uploads/' . ltrim($path, '/'));
 }
 
+/** Absolute image URL or upload path under assets/uploads. */
+function media_url(string $path): string
+{
+    $path = trim($path);
+    if ($path === '') {
+        return '';
+    }
+    if (str_starts_with($path, 'http://') || str_starts_with($path, 'https://')) {
+        return $path;
+    }
+    return upload_url($path);
+}
+
+function request_path(): string
+{
+    return (new Request())->getUri();
+}
+
+/** Gallery / portfolio category label for display. */
+function wincon_category_label(string $category): string
+{
+    return match ($category) {
+        'real_estate' => 'Real Estate',
+        'piling' => 'Piling',
+        'civil' => 'Civil',
+        'infrastructure' => 'Infrastructure',
+        default => ucfirst(str_replace('_', ' ', $category)),
+    };
+}
+
+function wincon_video_category_label(string $category): string
+{
+    return match ($category) {
+        'piling' => 'Foundation & piling',
+        'civil' => 'Civil & structural',
+        'site' => 'Site operations',
+        'equipment' => 'Equipment & logistics',
+        default => ucfirst($category),
+    };
+}
+
+function admin_page_label(string $page): string
+{
+    return match ($page) {
+        'home' => 'Home',
+        'about' => 'About',
+        'services' => 'Services',
+        'land' => 'Land',
+        'contact' => 'Contact',
+        default => ucfirst(str_replace('_', ' ', $page)),
+    };
+}
+
+function admin_gallery_category_label(string $category): string
+{
+    return match ($category) {
+        'real_estate' => 'Real Estate',
+        'piling' => 'Piling',
+        'civil' => 'Civil',
+        'infrastructure' => 'Infrastructure',
+        default => ucfirst(str_replace('_', ' ', $category)),
+    };
+}
+
+
 function old(string $key, mixed $default = ''): mixed
 {
     return $_SESSION['_old_input'][$key] ?? $default;

@@ -1,0 +1,36 @@
+Options -Indexes
+DirectoryIndex index.php index.html
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Private application code and data (never web-accessible)
+    RewriteRule ^(app|core|config|database|storage)(/|$) - [F,L]
+    RewriteRule ^\.git(/|$) - [F,L]
+    RewriteRule ^website_theme(/|$) - [F,L]
+    RewriteRule ^dev_doc(/|$) - [F,L]
+
+    # Canonical URLs: drop /public/ from the address bar if someone uses the old path
+    RewriteCond %{THE_REQUEST} \s/+public[\s/?] [NC]
+    RewriteRule ^public/?(.*)$ /$1 [R=301,L]
+
+    # Static assets and uploads are stored under public/
+    RewriteRule ^assets/(.*)$ public/assets/$1 [L]
+
+    # Front controller (same behaviour as public/.htaccess)
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+</IfModule>
+
+<IfModule mod_authz_core.c>
+    <FilesMatch "(?i)^\.env(\.|$)|\.(sql|sqlite|db|log|bak)$">
+        Require all denied
+    </FilesMatch>
+</IfModule>
+
+<IfModule mod_headers.c>
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>

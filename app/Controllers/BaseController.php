@@ -37,4 +37,12 @@ abstract class BaseController
     {
         $this->response->abort($code);
     }
+
+    /**
+     * @return array<string, string|null>
+     */
+    protected function siteSettings(): array
+    {
+        return (new SiteSettingModel())->getAll();
+    }
 }
