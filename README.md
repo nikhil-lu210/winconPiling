@@ -1,10 +1,10 @@
 # Wincon Pilling — PHP MVC Web Application
 
-A production-oriented PHP 8.1+ MVC application for **Wincon Pilling Construction Limited**: public marketing site, contact capture, and a secured admin panel for content, media, services, land listings, and site settings. Data is stored in **SQLite**; uploads live under `public/assets/uploads/`.
+A production-oriented PHP **8.4+** MVC application for **Wincon Pilling Construction Limited**: public marketing site, contact capture, and a secured admin panel for content, media, services, land listings, and site settings. Data is stored in **SQLite**; uploads live under `public/assets/uploads/`.
 
 ## Requirements
 
-- **PHP 8.1+** with extensions: `pdo_sqlite`, `sqlite3`, `json`, `mbstring`, `fileinfo` (recommended for image MIME checks)
+- **PHP 8.4+** (use the latest stable 8.x release; 8.5+ recommended) with extensions: `pdo_sqlite`, `sqlite3`, `json`, `mbstring`, `fileinfo` (recommended for image MIME checks)
 - **[Composer](https://getcomposer.org/)** — PHP dependency manager (this project uses **`composer.json`**, not `package.json`; Node/npm is only needed if you add front-end tooling yourself).
 - **Apache** with `mod_rewrite` (root `.htaccess` routes requests when the document root is the **project folder**; `public/.htaccess` is used when the document root is **`/public`** only)
 - **File write permission** for:

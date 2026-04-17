@@ -3,7 +3,7 @@
     "description": "Wincon Pilling PHP application",
     "type": "project",
     "require": {
-        "php": ">=8.1",
+        "php": "^8.4",
         "phpmailer/phpmailer": "^6.9"
     },
     "config": {
