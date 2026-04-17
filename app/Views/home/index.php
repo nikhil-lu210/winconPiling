@@ -20,19 +20,6 @@ $previewServices = array_slice($services, 0, 3);
                     <a href="<?= e(base_url('services')) ?>" class="btn btn-premium btn-accent">Explore Services <i class="fas fa-arrow-right"></i></a>
                     <a href="<?= e(base_url('portfolio')) ?>" class="btn btn-premium btn-outline-dark">Our Portfolio</a>
                 </div>
-                <div class="mt-5 d-flex align-items-center gap-4">
-                    <div class="d-flex -space-x-2">
-                        <img src="https://i.pravatar.cc/100?u=1" class="rounded-circle border border-2 border-white" width="40" height="40" alt="">
-                        <img src="https://i.pravatar.cc/100?u=2" class="rounded-circle border border-2 border-white ms-n2" width="40" height="40" alt="">
-                        <img src="https://i.pravatar.cc/100?u=3" class="rounded-circle border border-2 border-white ms-n2" width="40" height="40" alt="">
-                    </div>
-                    <div class="small fw-bold">
-                        <div class="text-warning">
-                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-                        </div>
-                        <?= e($content['hero_stat_label'] ?? '500+ Foundations Laid') ?>
-                    </div>
-                </div>
             </div>
             <div class="col-lg-5 d-none d-lg-block" data-aos="fade-left">
                 <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=800&q=80" alt="" class="img-fluid rounded-4 shadow-lg">

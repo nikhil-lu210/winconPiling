@@ -94,7 +94,6 @@ function seedPageContents(\PDO $pdo): void
         ['page' => 'home', 'section_key' => 'hero_title', 'label' => 'Home — Hero headline', 'value' => 'Building Solid Foundations Across Nigeria.'],
         ['page' => 'home', 'section_key' => 'hero_subtitle', 'label' => 'Home — Hero subtitle', 'value' => 'Wincon Pilling Construction Limited delivers premium engineering solutions and prime land opportunities for your next landmark project.'],
         ['page' => 'home', 'section_key' => 'hero_established', 'label' => 'Home — Hero tag', 'value' => 'Established 2008'],
-        ['page' => 'home', 'section_key' => 'hero_stat_label', 'label' => 'Home — Hero social proof', 'value' => '500+ Foundations Laid'],
         ['page' => 'home', 'section_key' => 'stats_years', 'label' => 'Home — Stat 1 title', 'value' => '15+ Years'],
         ['page' => 'home', 'section_key' => 'stats_years_label', 'label' => 'Home — Stat 1 subtitle', 'value' => 'Engineering Excellence'],
         ['page' => 'home', 'section_key' => 'stats_licensed', 'label' => 'Home — Stat 2 title', 'value' => 'Fully Licensed'],
