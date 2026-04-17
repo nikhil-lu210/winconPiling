@@ -52,8 +52,27 @@ a {
 }
 
 .admin-sidebar__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
   padding: 1.25rem 1.25rem 1rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.admin-sidebar__brand-text {
+  min-width: 0;
+  flex: 1;
+}
+
+.admin-sidebar__brand-logo {
+  flex-shrink: 0;
+  line-height: 0;
+}
+
+.admin-sidebar__brand-logo img {
+  height: 36px;
+  width: auto;
+  display: block;
 }
 
 .admin-sidebar__brand strong {

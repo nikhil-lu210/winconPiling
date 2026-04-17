@@ -5,6 +5,7 @@ $info = flash('info');
 ?>
 <div class="admin-auth-card">
     <div class="admin-auth-logo">
+        <?php $brandLogoClass = 'admin-auth-logo__mark'; include APP_PATH . '/Views/partials/brand-logo.php'; ?>
         <strong>WINCON PILLING</strong>
         <span>Construction Limited</span>
     </div>

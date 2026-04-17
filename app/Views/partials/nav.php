@@ -6,7 +6,8 @@ $path = request_path();
 <nav class="navbar navbar-expand-lg sticky-top" aria-label="Primary">
     <div class="container">
         <a class="navbar-brand" href="<?= e(base_url()) ?>">
-            WINCON <span style="color: var(--accent)">PILLING</span>
+            <?php $brandLogoClass = 'navbar-brand-logo'; include APP_PATH . '/Views/partials/brand-logo.php'; ?>
+            <span class="navbar-brand__text">WINCON <span style="color: var(--accent)">PILLING</span></span>
         </a>
         <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

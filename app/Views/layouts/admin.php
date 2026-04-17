@@ -20,6 +20,7 @@ $navActive = static function (string $prefix) use ($uri): bool {
     <meta name="robots" content="noindex, nofollow">
     <meta name="csrf-token" content="<?= e(csrf_token()) ?>">
     <title><?= e((string) $pageTitle) ?> — Admin</title>
+    <link rel="icon" href="<?= e(asset('images/favicon.ico')) ?>" sizes="any">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -31,8 +32,11 @@ $navActive = static function (string $prefix) use ($uri): bool {
 <div class="admin-shell">
     <aside class="admin-sidebar" id="adminSidebar" aria-label="Admin navigation">
         <div class="admin-sidebar__brand">
-            <strong><?= e($siteName) ?></strong>
-            <span>Administration</span>
+            <?php $brandLogoClass = 'admin-sidebar__brand-logo'; include APP_PATH . '/Views/partials/brand-logo.php'; ?>
+            <div class="admin-sidebar__brand-text">
+                <strong><?= e($siteName) ?></strong>
+                <span>Administration</span>
+            </div>
         </div>
         <nav class="admin-nav" aria-label="Primary">
             <a href="<?= e(base_url('admin/dashboard')) ?>" class="<?= $navActive('/admin/dashboard') ? 'is-active' : '' ?>">

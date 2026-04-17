@@ -10,6 +10,7 @@ $pageTitle = $pageTitle ?? 'Admin';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
     <title><?= e((string) $pageTitle) ?> — Wincon Admin</title>
+    <link rel="icon" href="<?= e(asset('images/favicon.ico')) ?>" sizes="any">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
@@ -38,6 +39,18 @@ $pageTitle = $pageTitle ?? 'Admin';
         .admin-auth-logo {
             text-align: center;
             margin-bottom: 0.25rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.65rem;
+        }
+        .admin-auth-logo__mark {
+            line-height: 0;
+        }
+        .admin-auth-logo__mark img {
+            height: 52px;
+            width: auto;
+            display: block;
         }
         .admin-auth-logo strong {
             font-size: 1.35rem;

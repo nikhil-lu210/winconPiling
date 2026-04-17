@@ -13,6 +13,7 @@ $settings = $settings ?? [];
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta name="description" content="<?= e($metaDescription) ?>">
     <title><?= e($pageTitle) ?></title>
+    <link rel="icon" href="<?= e(asset('images/favicon.ico')) ?>" sizes="any">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
