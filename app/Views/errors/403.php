@@ -15,6 +15,9 @@ $msg = ($errorMessage ?? '') !== '' ? $errorMessage : 'You do not have permissio
 </head>
 <body class="bg-soft d-flex align-items-center min-vh-100">
 <div class="container text-center py-5">
+    <div class="error-page-brand">
+        <?php $brandLogoClass = 'error-page-logo'; include APP_PATH . '/Views/partials/brand-logo.php'; ?>
+    </div>
     <h1 class="display-4 fw-bold text-accent">403</h1>
     <p class="lead text-muted mb-4"><?= e($msg) ?></p>
     <a href="<?= e(base_url()) ?>" class="btn btn-premium btn-accent">Back to homepage</a>

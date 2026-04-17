@@ -72,6 +72,23 @@ body {
     display: block;
 }
 
+/* Error pages (403 / 404 / 500) */
+.error-page-brand {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+}
+
+.error-page-logo {
+    line-height: 0;
+}
+
+.error-page-logo img {
+    height: 56px;
+    width: auto;
+    display: block;
+}
+
 .nav-link {
     font-weight: 600;
     font-size: 0.9rem;

@@ -63,10 +63,22 @@ $service_interest = (($service_interest ?? '') !== '') ? (string) $service_inter
             <td align="center" style="padding:40px 10px;">
                 <table role="presentation" class="email-container" style="width:600px;border-collapse:collapse;border:1px solid #d1d6e0;border-spacing:0;text-align:left;background-color:#ffffff;border-radius:8px;overflow:hidden;box-shadow:0 4px 6px -1px rgba(0, 0, 0, 0.1);">
                     <tr>
-                        <td align="center" style="padding:30px 20px;background-color:#ffffff;border-bottom:3px solid #f2b705;">
-                            <h1 style="margin:0;font-size:28px;font-weight:800;letter-spacing:-0.5px;color:#0f1e3a;">
-                                WINCON<span style="color:#f2b705;">PILLING</span>
-                            </h1>
+                        <td align="center" style="padding:24px 20px 20px 20px;background-color:#ffffff;border-bottom:3px solid #f2b705;">
+                            <table role="presentation" style="margin:0 auto;border-collapse:collapse;border:0;border-spacing:0;">
+                                <tr>
+                                    <td style="padding:0 14px 0 0;vertical-align:middle;">
+                                        <picture>
+                                            <source srcset="<?= e(base_url('assets/images/logo.webp')) ?>" type="image/webp">
+                                            <img src="<?= e(base_url('assets/images/logo.png')) ?>" alt="Wincon Pilling" width="56" style="display:block;border:0;height:auto;max-width:56px;">
+                                        </picture>
+                                    </td>
+                                    <td style="vertical-align:middle;text-align:left;">
+                                        <h1 style="margin:0;font-size:28px;font-weight:800;letter-spacing:-0.5px;color:#0f1e3a;line-height:1.1;">
+                                            WINCON<span style="color:#f2b705;">PILLING</span>
+                                        </h1>
+                                    </td>
+                                </tr>
+                            </table>
                         </td>
                     </tr>
                     <tr>
